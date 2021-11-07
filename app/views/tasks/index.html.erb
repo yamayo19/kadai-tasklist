@@ -1,5 +1,3 @@
-<% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
 <h1>タスク一覧</h1>
 
 <ul>
@@ -8,12 +6,3 @@
   <% end %>
 </ul>
 <%= link_to '新規タスクの保存', new_task_path %>
-<% else %>
-  <div class="bg-secondary p-3 p-sm-5 my-4 rounded">
-    <div class="text-center text-white">
-      <h1>Welcome to the Tasklists</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-      <%= link_to 'login now!', login_path, class: 'btn btn-lg btn-primary' %>
-    </div>
-  </div>
-<% end %>
