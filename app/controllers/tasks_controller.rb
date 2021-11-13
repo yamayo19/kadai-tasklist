@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:show, :edit, :update, :destroy]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
      def index
        @tasks = current_user.tasks.order(id: :desc)
   end
@@ -47,9 +46,6 @@ class TasksController < ApplicationController
   end
   
   private
-  def set_message
-    @task = Task.find(params[:id])
-  end
 
   # Strong Parameter
   def task_params
